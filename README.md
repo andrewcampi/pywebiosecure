@@ -6,7 +6,7 @@ A fork of pywebio 1.7 that supports HTTPS. Bring your own cert, or automatically
 
 Credit goes to PyWebIO's creator for the source code. I made some changes to a few files to add this critical security feature.
 
-## Additional Features
+## New Features
 
 - Automatically generate TLS 1.3 certs using openSSL.
 - Supports BYOC (Bring Your Own Cert).

@@ -4,7 +4,7 @@ A fork of pywebio 1.7 that supports HTTPS. Bring your own cert, or automatically
 
 ## Credit
 
-Credit goes to PyWebIO's creator for the source code. I made some changes to a few files to add this critical security feature.
+Credit goes to PyWebIO's creator for the source code. This project is based off of pywebio 1.7 with changes made to add this critical security feature.
 
 ## New Features
 
@@ -60,5 +60,5 @@ start_server(test_screen, port=8585, debug=True, byoc=["/home/sandbox/Desktop/ce
 ```
 
 ## Additional Info
-All other pywebio functionality is the same as in pywebio 1.7. 
+All other functionality is the same as in pywebio 1.7. 
 Reference https://pywebio.readthedocs.io/ for further documentation.

@@ -58,3 +58,7 @@ def test_screen():
 
 start_server(test_screen, port=8585, debug=True, byoc=["/home/sandbox/Desktop/cert.pem", "/home/sandbox/Desktop/key.pem"])
 ```
+
+## Additional Info
+All other pywebio functionality is the same as in pywebio 1.7. 
+Reference https://pywebio.readthedocs.io/ for further documentation.

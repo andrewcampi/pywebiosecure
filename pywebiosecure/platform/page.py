@@ -20,7 +20,7 @@ MAX_PAYLOAD_SIZE = 0
 
 DEFAULT_CDN = "https://cdn.jsdelivr.net/gh/wang0618/PyWebIO-assets@v{version}/"
 
-_global_config = {'title': 'PyWebIO Application'}
+_global_config = {'title': 'Application'}
 config_keys = ['title', 'description', 'js_file', 'js_code', 'css_style', 'css_file', 'theme']
 AppMeta = namedtuple('App', config_keys)
 

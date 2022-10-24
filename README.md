@@ -1,14 +1,19 @@
 # PyWebIO Secure
+
 A fork of pywebio 1.7 that supports HTTPS
 
+# Credit
 
-## Features：
+Credit goes to PyWebIO's creator for the source code. I made some changes to a few files to add this critical security feature.
+
+## Additional Features
 
 - Automatically generate TLS 1.3 certs using openSSL.
 - Supports BYOC (Bring Your Own Cert).
 
 
 ## Requirements
+
 If you are not providing your own cert, openssl is required. 
 ```bash
 apt-get install openssl -y
@@ -17,9 +22,8 @@ apt-get install openssl -y
 
 ## Installation
 
-```bash
-pip3 install pywebiosecure
-```
+- Download the two folders in this repo. 
+- Copy them both to your python library folder.
 
 
 ## Example code (Auto generate cert)

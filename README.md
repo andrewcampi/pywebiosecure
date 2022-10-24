@@ -23,7 +23,7 @@ apt-get install openssl -y
 ## Installation
 
 - Download the two folders in this repo. 
-- Copy them both to your python library folder.
+- Copy them both to your python packages folder.
 
 
 ## Example code (Auto generate cert)

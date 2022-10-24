@@ -1,6 +1,6 @@
 # PyWebIO Secure
 
-A fork of pywebio 1.7 that supports HTTPS
+A fork of pywebio 1.7 that supports HTTPS. Bring your own cert, or automatically generate a new TLS 1.3 cert.
 
 ## Credit
 

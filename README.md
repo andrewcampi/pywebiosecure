@@ -4,7 +4,7 @@ A fork of pywebio 1.7 that supports HTTPS. Bring your own cert, or automatically
 
 ## Credit
 
-Credit goes to PyWebIO's creator for the source code. This project is based off of pywebio 1.7 with changes made to add this critical security feature.
+Credit goes to PyWebIO's creator for the source code. This project is based on pywebio 1.7 with changes and additions made to add a critical security feature.
 
 ## New Features
 

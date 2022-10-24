@@ -1,0 +1,138 @@
+Metadata-Version: 1.0
+Name: pywebiosecure
+Version: 1.7.0
+Summary: A fork of pywebio 1.7 that supports HTTPS.
+Home-page: https://pywebio.readthedocs.io
+Author: AndrewCampi
+Author-email: acampi.pypi@gmail.com
+License: MIT
+Project-URL: Documentation, https://pywebio.readthedocs.io
+Project-URL: Source, https://github.com/andrewcampi/pywebiosecure
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.5.2
+Description-Content-Type: text/markdown
+Requires-Dist: tornado (>=5.0)
+Requires-Dist: user-agents
+Provides-Extra: aiohttp
+Requires-Dist: aiohttp (>=3.1) ; extra == 'aiohttp'
+Provides-Extra: all
+Requires-Dist: aiohttp (>=3.1) ; extra == 'all'
+Requires-Dist: bokeh ; extra == 'all'
+Requires-Dist: django (>=2.2) ; extra == 'all'
+Requires-Dist: flask (>=0.10) ; extra == 'all'
+Requires-Dist: sphinx ; extra == 'all'
+Requires-Dist: sphinx-tabs ; extra == 'all'
+Provides-Extra: bokeh
+Requires-Dist: bokeh ; extra == 'bokeh'
+Provides-Extra: django
+Requires-Dist: django (>=2.2) ; extra == 'django'
+Provides-Extra: doc
+Requires-Dist: sphinx ; extra == 'doc'
+Requires-Dist: sphinx-tabs ; extra == 'doc'
+Provides-Extra: flask
+Requires-Dist: flask (>=0.10) ; extra == 'flask'
+
+<h1 align="center" name="pywebio-en">PyWebIO Secure</h1>
+<p align="center">
+    <em>A fork of pywebio 1.7 that supports HTTPS.</em>
+</p>
+<p align="center">
+    <a href="https://percy.io/pywebio/pywebio">
+        <img src="https://percy.io/static/images/percy-badge.svg" alt="Percy visual test">
+    </a>
+    <a href="https://codecov.io/gh/pywebio/PyWebIO">
+        <img src="https://codecov.io/gh/pywebio/PyWebIO/branch/dev/graph/badge.svg?token=YWH3WC828H" alt="Code coverage"/>
+    </a>
+    <a href="https://www.jsdelivr.com/package/gh/wang0618/PyWebIO-assets">
+        <img src="https://data.jsdelivr.com/v1/package/gh/wang0618/PyWebIO-assets/badge?style=rounded" alt="Jsdelivr hit count"/>
+    </a>
+    <a href="https://pywebio.readthedocs.io/zh_CN/latest/?badge=latest">
+        <img src="https://readthedocs.org/projects/pywebio/badge/?version=latest" alt="Documentation Status">
+    </a>
+    <a href="https://pypi.org/project/PyWebIO/">
+        <img src="https://img.shields.io/pypi/v/pywebio?colorB=brightgreen" alt="Package version">
+    </a>
+    <a href="https://pypi.org/project/PyWebIO/">
+        <img src="https://img.shields.io/badge/python->%3D%203.5.2-brightgreen" alt="Python Version">
+    </a>
+    <br/>
+    <a href="https://lgtm.com/projects/g/wang0618/PyWebIO/context:python">
+        <img src="https://img.shields.io/lgtm/grade/python/github/wang0618/PyWebIO.svg?colorB=brightgreen" alt="Python code quality">
+    </a>
+    <a href="https://lgtm.com/projects/g/wang0618/PyWebIO/context:javascript">
+        <img src="https://img.shields.io/lgtm/grade/javascript/github/wang0618/PyWebIO.svg?colorB=brightgreen" alt="Javascript code quality">
+    </a>
+    <a href="https://github.com/wang0618/PyWebIO/blob/master/LICENSE">
+        <img src="https://img.shields.io/github/license/wang0618/PyWebIO.svg" alt="License">
+    </a>
+    <br/>
+    <a href="https://pywebio.readthedocs.io">[Document]</a> | <a href="http://pywebio-demos.pywebio.online/">[Demos]</a> | <a href="https://github.com/wang0618/PyWebIO/wiki/Why-PyWebIO%3F">[Why PyWebIO?]</a>
+</p>
+
+[English](README.md) | [中文](README-zh.md)
+
+PyWebIO provides a series of imperative functions to obtain user input and output on the browser, turning the browser into a "rich text terminal", and can be used to build simple web applications or browser-based GUI applications without the need to have knowledge of HTML and JS. PyWebIO can also be easily integrated into existing Web services. PyWebIO is very suitable for quickly building applications that do not require complex UI.
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/wang0618/PyWebIO/dev/docs/assets/output_demo.gif" alt="PyWebIO output demo" width='609px'/>
+    <img src="https://raw.githubusercontent.com/wang0618/PyWebIO/dev/docs/assets/input_demo.gif" alt="PyWebIO input demo" width='609px'/>
+</p>
+
+
+Features：
+
+- Automatically generate TLS 1.3 certs using openSSL.
+- Supports BYOC (Bring Your Own Cert).
+
+
+## Requirements
+If you are not providing your own cert, openssl is required. 
+```bash
+apt-get install openssl -y
+```
+
+
+## Installation
+
+```bash
+pip3 install pywebiosecure
+```
+
+
+## Example code (Auto generate cert)
+
+```bash
+from pywebiosecure.session import download, info
+from pywebiosecure.output import *
+from pywebiosecure.input import *
+from pywebiosecure.pin import *
+from pywebiosecure.platform.django import start_server
+
+def test_screen():
+	clear()
+	put_text("Got here!")
+	print("Got here!")
+
+start_server(test_screen, port=8585, debug=True)
+```
+
+## Example code (BYOC)
+```bash
+from pywebiosecure.session import download, info
+from pywebiosecure.output import *
+from pywebiosecure.input import *
+from pywebiosecure.pin import *
+from pywebiosecure.platform.django import start_server
+
+def test_screen():
+	clear()
+	put_text("Got here!")
+	print("Got here!")
+
+start_server(test_screen, port=8585, debug=True, byoc=["/home/sandbox/Desktop/cert.pem", "/home/sandbox/Desktop/key.pem"])
+```

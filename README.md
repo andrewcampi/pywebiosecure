@@ -40,7 +40,7 @@ def test_screen():
 	put_text("Got here!")
 	print("Got here!")
 
-start_server(test_screen, port=8585, debug=True)
+start_server(test_screen, port=443, debug=True)
 ```
 
 ## Example code (BYOC)
@@ -56,7 +56,7 @@ def test_screen():
 	put_text("Got here!")
 	print("Got here!")
 
-start_server(test_screen, port=8585, debug=True, byoc=["/home/sandbox/Desktop/cert.pem", "/home/sandbox/Desktop/key.pem"])
+start_server(test_screen, port=443, debug=True, byoc=["/home/sandbox/Desktop/cert.pem", "/home/sandbox/Desktop/key.pem"])
 ```
 
 ## Additional Info

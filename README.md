@@ -1,5 +1,5 @@
-# pywebiosecure
-A fork of pywebio that supports HTTPS
+# PyWebIO Secure
+A fork of pywebio 1.7 that supports HTTPS
 
 
 ## Features：
